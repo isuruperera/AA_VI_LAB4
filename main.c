@@ -89,9 +89,11 @@ int main() {
     char buffer_a[2*S1];
     long results_a[test_iterations];
     test_a(buffer_a,results_a);
+
     char buffer_b[2*S1];
     long results_b[test_iterations];
     test_b(buffer_b,results_b);
+
     char buffer_c[2*S2];
     long results_c[test_iterations];
     test_c(buffer_c,results_c);
@@ -117,7 +119,7 @@ int main() {
     double bandwidth_b = (mem_access_cycles/(1024*1024))/avg_time_b;
     double bandwidth_c = (mem_access_cycles/(1024*1024))/avg_time_c;
 
-    printf("Number of Memory Access Cycles: %ld \n",mem_access_cycles);
+    printf("Number of Memory Access Cycles per iteration: %ld \n",mem_access_cycles);
     printf("Number of Test iterations: %d \n",test_iterations);
 
     printf("AVG Time Subroutine A: %f sec\n",avg_time_a);
