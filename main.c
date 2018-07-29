@@ -113,9 +113,9 @@ int main() {
     double byte_access_time_b = avg_time_b/mem_access_cycles;
     double byte_access_time_c = avg_time_c/mem_access_cycles;
 
-    double bandwidth_a = (mem_access_cycles*1024*1024)/avg_time_a;
-    double bandwidth_b = (mem_access_cycles*1024*1024)/avg_time_b;
-    double bandwidth_c = (mem_access_cycles*1024*1024)/avg_time_c;
+    double bandwidth_a = (mem_access_cycles/(1024*1024))/avg_time_a;
+    double bandwidth_b = (mem_access_cycles/(1024*1024))/avg_time_b;
+    double bandwidth_c = (mem_access_cycles/(1024*1024))/avg_time_c;
 
     printf("Number of Memory Access Cycles: %ld \n",mem_access_cycles);
     printf("Number of Test iterations: %d \n",test_iterations);
