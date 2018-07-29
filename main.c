@@ -8,10 +8,10 @@ const int S2 = 262144;
 const int B1 = 64;
 const int B2 = 64;
 const int test_iterations = 10;
-const long sub_iterations_a = 1000000; // iterations for 6553600000 mem accesses
-const long sub_iterations_b = 64000000; // iterations for 6553600000 mem accesses
-const long sub_iterations_c = 8000000; // iterations for 6553600000 mem accesses
-const long mem_access_cycles = 65536000000;
+const long sub_iterations_a = 100000; // iterations for 6553600000 mem accesses
+const long sub_iterations_b = 6400000; // iterations for 6553600000 mem accesses
+const long sub_iterations_c = 800000; // iterations for 6553600000 mem accesses
+const long mem_access_cycles = 6553600000;
 
 void subroutine_a(char *buffer) {
     for(int i=0;i<2*S1;i++){
@@ -113,9 +113,9 @@ int main() {
     double byte_access_time_b = avg_time_b/mem_access_cycles;
     double byte_access_time_c = avg_time_c/mem_access_cycles;
 
-    double bandwidth_a = (2*S1*sub_iterations_a)/avg_time_a;
-    double bandwidth_b = (mem_access_cycles*B1)/avg_time_b;
-    double bandwidth_c = (mem_access_cycles*B2)/avg_time_c;
+    double bandwidth_a = 1/(byte_access_time_a*1024*1024);
+    double bandwidth_b = 1/(byte_access_time_b*1024*1024);
+    double bandwidth_c = 1/(byte_access_time_c*1024*1024);
 
     printf("Number of Memory Access Cycles: %ld \n",mem_access_cycles);
     printf("Number of Test iterations: %d \n",test_iterations);
