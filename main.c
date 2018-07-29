@@ -8,10 +8,10 @@ const int S2 = 262144;
 const int B1 = 64;
 const int B2 = 64;
 const int test_iterations = 10;
-const long sub_iterations_a = 100000; // iterations for 6553600000 mem accesses
-const long sub_iterations_b = 6400000; // iterations for 6553600000 mem accesses
-const long sub_iterations_c = 800000; // iterations for 6553600000 mem accesses
-const long mem_access_cycles = 6553600000;
+const long sub_iterations_a = 1000000; // iterations for 65536000000 mem accesses
+const long sub_iterations_b = 64000000; // iterations for 65536000000 mem accesses
+const long sub_iterations_c = 8000000; // iterations for 65536000000 mem accesses
+const long mem_access_cycles = 65536000000;
 
 void subroutine_a(char *buffer) {
     for(int i=0;i<2*S1;i++){
